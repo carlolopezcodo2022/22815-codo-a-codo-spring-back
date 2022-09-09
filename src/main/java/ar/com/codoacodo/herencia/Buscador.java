@@ -42,7 +42,7 @@ public class Buscador {
 		return this.claveBusqueda;
 	}
 	
-	Articulo[] getResultados() {
+	public Articulo[] getResultados() {
 		return this.resultados;
 	}
 

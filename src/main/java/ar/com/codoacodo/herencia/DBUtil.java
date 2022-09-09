@@ -1,27 +1,29 @@
 package ar.com.codoacodo.herencia;
 
+import ar.com.codoacodo.herencia.clase6.Libro;
+import ar.com.codoacodo.herencia.clase6.Musica;
+import ar.com.codoacodo.herencia.clase6.Pelicula;
+
 public class DBUtil {
 
-	/*
-	 * 
-	 */
-	Articulo[] obtenerResultado(String claveBusqueda) {
+	public Articulo[] obtenerResultado(String claveBusqueda) {
 		
-		Articulo primero = new Articulo("http://sitio.com.ar/img/img1.jpg","tiulo" + claveBusqueda,"AUTOR1",4390);
-		Articulo segundo = new Articulo("http://sitio.com.ar/img/img2.jpg","tiulo" + claveBusqueda,"AUTOR2",40500);
-		Articulo tercero = new Articulo("http://sitio.com.ar/img/img3.jpg","tiulo" + claveBusqueda,"AUTOR3",2040);
+		//
+		Libro l1 = new Libro("http://sitio.com.ar/img/img1.jpg","tiulo" + claveBusqueda,"AUTOR l1",4390);
+		l1.setIsbn("9789876378253");
+		l1.setNroPaginas(72);
 		
-		//crear un vector/array/arreglo!
-		//inician en la posicion 0
-		/*Articulo[] resultados = new Articulo[3];//vector vacio
-		resultados[0] = primero;
-		resultados[1] = segundo;
-		resultados[2] = tercero;*/
+		Libro l2 = new Libro("http://sitio.com.ar/img/img1.jpg","tiulo" + claveBusqueda,"AUTOR l2",4390,72,"9789876378253");
 		
-		//Articulo[] res = new Articulo[] {primero,segundo,tercero};//vector los tres datos cargados
+		Musica m1 = new Musica("http://sitio.com.ar/img/img2.jpg","tiulo" + claveBusqueda,"AUTOR2 m1",70500,"SONY MUSIC",new String[] {});
+		Musica m2 = new Musica("http://sitio.com.ar/img/img2.jpg","tiulo" + claveBusqueda,"AUTOR2 m2",50500);
+		m2.setSello("WARNER");
+				
+		Pelicula p1 = new Pelicula("http://sitio.com.ar/img/img3.jpg","tiulo" + claveBusqueda,"AUTOR p1",3040,"20TH CENTURY FOX","BLU-RAY");
+		Pelicula p2 = new Pelicula("http://sitio.com.ar/img/img3.jpg","tiulo" + claveBusqueda,"AUTOR p2",4040);
+		p2.setFormato("BLUE RAY 3D");
 		
-		//return primero;
-		
-		return new Articulo[] {primero,segundo,tercero};
+		Articulo a = new Articulo("/img/img1.jpg","tiulo" + claveBusqueda,"AUTOR ARTICULO ",4390);
+		return new Articulo[] {l1,l2,m1,m2,p1,p2,a};
 	}
 }

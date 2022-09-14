@@ -5,6 +5,10 @@ import ar.com.codoacodo.herencia.Buscador;
 
 public class MainBuscador {
 
+	/*
+	 *POST > 
+	 *claveOrden > input
+	 * */
 	public static void main(String[] args) {
 		
 		String clave = "harry potter";

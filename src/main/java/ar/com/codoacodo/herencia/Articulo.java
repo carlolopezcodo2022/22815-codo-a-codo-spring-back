@@ -1,11 +1,15 @@
 package ar.com.codoacodo.herencia;
 
+import java.util.Date;
+
 public class Articulo {
 
 	protected String img;
 	private String titulo;
 	private String autor;
-	private float precio;
+	private Float precio;
+	private Date fechaPublicacion; //usar para ordenar
+	private int cantidadVendido; //usar para ordenar
 	
 	//alt+shit+s
 	public Articulo(String img, String titulo, String autor, float precio) {
@@ -42,7 +46,7 @@ public class Articulo {
 		this.autor = autor;
 	}
 
-	public float getPrecio() {
+	public Float getPrecio() {
 		return precio;
 	}
 
@@ -53,6 +57,26 @@ public class Articulo {
 	@Override
 	public String toString() {
 		return "Articulo [img=" + img + ", titulo=" + titulo + ", autor=" + autor + ", precio=" + precio + "]";
+	}
+
+	public Date getFechaPublicacion() {
+		return fechaPublicacion;
+	}
+
+	public void setFechaPublicacion(Date fechaPublicacion) {
+		this.fechaPublicacion = fechaPublicacion;
+	}
+
+	public int getCantidadVendido() {
+		return cantidadVendido;
+	}
+
+	public void setCantidadVendido(int cantidadVendido) {
+		this.cantidadVendido = cantidadVendido;
+	}
+
+	public void setPrecio(Float precio) {
+		this.precio = precio;
 	}
 	
 	//

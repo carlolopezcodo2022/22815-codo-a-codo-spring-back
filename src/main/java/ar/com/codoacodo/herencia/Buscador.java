@@ -1,5 +1,7 @@
 package ar.com.codoacodo.herencia;
 
+import ar.com.codoacodo.herencia.clase8.CreadorDeFiltros;
+
 public class Buscador {
 
 	private String claveBusqueda;
@@ -11,7 +13,7 @@ public class Buscador {
 		this.setClaveBusqueda(claveDelUsuario);
 		this.setResultados(new Articulo[]{});
 		
-		this.setFiltros(new MasVendidos());
+		this.setFiltros(CreadorDeFiltros.crearFiltroDefault());
 	}
 	
 	private void setFiltros(IFiltro filtro) {	
@@ -22,18 +24,9 @@ public class Buscador {
 		setFiltros(nuevoFiltro);
 	}
 	
-	public void ordenar(String claveDeOrdenamiento) {
-		switch (claveDeOrdenamiento) {
-			case "MASVENDIDOS":
-				this.setFiltros(new MasVendidos(this.getResultados()));
-				break;
-			case "MAYORPRECIO":
-				this.setFiltros(new MayorPrecio());
-				break;
-			default:
-				this.setFiltros(new MasVendidos());
-				break;
-		}
+	public void ordenar() {
+		//down casting de IFiltro a FiltroBase
+		((FiltroBase)(this.filtros)).setLista(getResultados());
 		this.filtros.ordenar();
 	}
 	
@@ -55,6 +48,8 @@ public class Buscador {
 			System.out.println("Autor: " + aux.getAutor());
 			System.out.println("Img: " + aux.getImg());
 			System.out.println("Precio: " + aux.getPrecio());
+			System.out.println("Cant. Vendidos: " + aux.getCantidadVendido());
+			System.out.println("Fecha publicación:  " + aux.getFechaPublicacion());
 			System.out.println("---------------");
 		}
 	}

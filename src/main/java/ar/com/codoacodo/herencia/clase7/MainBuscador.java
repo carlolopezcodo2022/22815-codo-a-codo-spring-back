@@ -17,9 +17,9 @@ public class MainBuscador {
 		
 		buscador.buscar();
 		
-		buscador.ordenar(claveOrden);
+		buscador.ordenar();
 	
 		claveOrden = "MASVENDIDOS";		
-		buscador.ordenar(claveOrden);
+		buscador.ordenar();
 	}
 }

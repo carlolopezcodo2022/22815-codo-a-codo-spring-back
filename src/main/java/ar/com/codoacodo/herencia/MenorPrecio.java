@@ -2,19 +2,19 @@ package ar.com.codoacodo.herencia;
 
 import java.util.Arrays;
 
-public class MayorPrecio extends FiltroBase implements IFiltro {
+public class MenorPrecio extends FiltroBase implements IFiltro {
 
-	public MayorPrecio() {
+	public MenorPrecio() {
 		super("Mayor Precio");
-	}
+	};	
 	
-	public MayorPrecio(Articulo[] lista) {
+	public MenorPrecio(Articulo[] lista) {
 		super("Mayor Precio",lista);
 	};
 	
 	public void ordenar() {
 		
-		System.out.println("Ordenando por " + getNombre());
+		System.out.println("ordenando por mayor precio");
 		//_3_|__5__|__4__|__2__|_9___|
 		
 		//_9_|__5__|__4__|__3__|_2___|
@@ -25,8 +25,7 @@ public class MayorPrecio extends FiltroBase implements IFiltro {
 		
 		// a - b = 0 => iguales
 		// a - b > 0 => a es mayor que b
-		// a - b < 0 => b es mayor que a
-		
-		Arrays.sort(lista, (a, b) -> Float.compare(b.getPrecio(), a.getPrecio()));
+		// a - b < 0 => b es mayor que a 
+		Arrays.sort(lista, (a, b) -> Float.compare(a.getPrecio(),b.getPrecio()));
 	}
 }

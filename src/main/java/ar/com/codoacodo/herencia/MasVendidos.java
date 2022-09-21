@@ -1,12 +1,18 @@
 package ar.com.codoacodo.herencia;
 
-public class MasVendidos extends Ordenador implements IFiltro {
-	public MasVendidos (String nombre) {
-		super(nombre);
+import java.util.Arrays;
+
+public class MasVendidos extends FiltroBase implements IFiltro {
+	
+	public MasVendidos () {
+		super("Mas Vendido",new Articulo[]{});
+	}
+	public MasVendidos (Articulo[] lista) {
+		super("Mas Vendido",lista);
 	}
 	
-	public Articulo[] ordenar(Articulo[] lista) {
-		System.out.println("ordenando por mas vendido");
-		return lista;
+	public void ordenar() {
+		System.out.println("ordenando por: " + getNombre());
+		Arrays.sort(lista, (a, b) -> Integer.compare(b.getCantidadVendido(), a.getCantidadVendido()));
 	}
 }

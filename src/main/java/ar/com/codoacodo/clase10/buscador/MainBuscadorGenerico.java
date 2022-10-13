@@ -8,9 +8,11 @@ public class MainBuscadorGenerico {
 		
 		String tipoDeBusqueda = "isbn";
 		
-		Map<String, IBuscador> mapBuscadores  = BuscadoBuilder.buildMapBuscador();
+		TipoBuscadorEnum opcion = TipoBuscadorEnum.valueOf(tipoDeBusqueda.toUpperCase());//mayuscula
 		
-		IBuscador buscador = mapBuscadores.get(tipoDeBusqueda);
+		Map<TipoBuscadorEnum, IBuscador> mapBuscadores  = BuscadoBuilder.buildMapBuscador();
+		
+		IBuscador buscador = mapBuscadores.get(opcion);
 		
 		if(buscador != null) {
 			String dato = buscador.buscar();

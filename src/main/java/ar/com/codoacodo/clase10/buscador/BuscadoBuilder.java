@@ -5,14 +5,14 @@ import java.util.Map;
 
 public class BuscadoBuilder {
 
-	public static Map<String,IBuscador> buildMapBuscador() {
+	public static Map<TipoBuscadorEnum,IBuscador> buildMapBuscador() {
 		
-		Map<String, IBuscador> mapBuscadores  = new HashMap<>();
+		Map<TipoBuscadorEnum, IBuscador> mapBuscadores  = new HashMap<>();
 		
 		//cargar
-		mapBuscadores.put("titulo", new BuscadorTitulo());
-		mapBuscadores.put("isbn", new BuscadorISBN());
-		mapBuscadores.put("autor", new BuscadorAutor());
+		mapBuscadores.put(TipoBuscadorEnum.TITULO, new BuscadorTitulo());
+		mapBuscadores.put(TipoBuscadorEnum.ISBN, new BuscadorISBN());
+		mapBuscadores.put(TipoBuscadorEnum.AUTOR, new BuscadorAutor());
 		
 		return mapBuscadores;
 	}

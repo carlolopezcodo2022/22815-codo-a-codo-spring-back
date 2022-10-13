@@ -2,7 +2,7 @@ package ar.com.codoacodo.herencia;
 
 import java.util.Date;
 
-public class Articulo {
+public class Articulo implements Comparable<Articulo>{
 
 	protected String img;
 	private String titulo;
@@ -79,5 +79,18 @@ public class Articulo {
 		this.precio = precio;
 	}
 	
-	//
+	//<0 asc
+	//>0
+	//=0
+	public int compareTo(Articulo o) {
+		//precio
+		int cmp = this.getPrecio().compareTo(o.getPrecio());
+		
+		//cantidad de vendidos
+		if(cmp == 0) {
+			cmp = o.getCantidadVendido() - this.getCantidadVendido();
+		}
+		
+		return cmp;
+	}
 }
